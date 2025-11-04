@@ -1,6 +1,10 @@
 class Pessoa:
-    def __init__(self) -> None:
-        
+    def __init__(self, nome: str):
+        self.nome = nome
+
+    def __str__(self):
+        return self.nome
+    
 class Mercado:
     def __init__(self, n_cad: int) -> None:
         self.espera: list[Pessoa]=[]
@@ -12,12 +16,28 @@ class Mercado:
         self.espera.append(pessoa)
     
     def chamarC(self, index: int):
+        if index < 0 or index >= len(self.caixas):
+            print("index invalido")
+            return
+        
+        if self.caixas[index] is not None:
+            print("caixa ocupado")
+            return
 
-    def finalizarA(self):
-
+        if len(self.espera)==0:
+            print("ninguém esperando")
+            return
+        
+        self.caixas[index]=self.espera[0]
+        del self.espera[0]
+        
+    def finalizarA(self, ):
+        
 
     def __str__(self):
-        def to_str(pessoa: Pessoa | None) -> str:
-            if Pessoa is None:
-                return "-----"
-            return str(pessoa)
+        caixas=","
+        # def to_str(pessoa: Pessoa | None) -> str:
+        #     if Pessoa is None:
+        #         return "-----"
+        #     return str(pessoa)
+        
