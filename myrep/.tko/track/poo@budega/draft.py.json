@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-08_01-31-20",
+            "content": "@@ -80,69 +80,15 @@\n def \n-getNome(self):%0A        return self.nome%0A    %0A    def toString\n+__str__\n (sel\n@@ -110,11 +110,8 @@\n urn \n-f%22%7B\n self\n@@ -119,10 +119,8 @@\n nome\n-%7D%22\n %0A   \n@@ -805,17 +805,16 @@\n pera%5B0%5D%0A\n-%0A\n         \n@@ -1084,305 +1084,4 @@\n     \n-%0A%0Adef main ():%0A    mercado = Mercado(%22%22)%0A%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22finish%22:%0A            # break%0A        elif args%5B0%5D == %22show%22:%0A            print(mercado)%0A            %0A        elif args%5B0%5D == %22init%22:%0Amain()\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-08_02-12-30",
+            "content": "class Pessoa:\n    def __init__(self, nome: str):\n        self.nome = nome\n\n    def getNome(self):\n        return self.nome\n    \n    def toString(self):\n        return f\"{self.nome}\"\n    \nclass Mercado:\n    def __init__(self, n_cad: int) -> None:\n        self.espera: list[Pessoa]=[]\n        self.caixas: list[Pessoa | None]=[]\n        for _ in range(n_cad):\n            self.caixas.append(None)\n        \n    def chegarC(self, pessoa:Pessoa):\n        self.espera.append(pessoa)\n    \n    def chamarC(self, index: int):\n        if index < 0 or index >= len(self.caixas):\n            print(\"index invalido\")\n            return\n        \n        if self.caixas[index] is not None:\n            print(\"caixa ocupado\")\n            return\n\n        if len(self.espera)==0:\n            print(\"ningu\u00e9m esperando\")\n            return\n        \n        self.caixas[index]=self.espera[0]\n\n        del self.espera[0]\n        \n    def finalizarA(self, ):\n        \n\n    def __str__(self):\n        caixas=\",\"\n        # def to_str(pessoa: Pessoa | None) -> str:\n        #     if Pessoa is None:\n        #         return \"-----\"\n        #     return str(pessoa)\n        \n\ndef main ():\n    mercado = Mercado(\"\")\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"finish\":\n            # break\n        elif args[0] == \"show\":\n            print(mercado)\n            \n        elif args[0] == \"init\":\nmain()",
+            "lines": "63"
+        }
+    ]
+}
