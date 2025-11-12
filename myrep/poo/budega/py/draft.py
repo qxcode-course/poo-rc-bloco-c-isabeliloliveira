@@ -1,4 +1,4 @@
-class Pessoa:
+class Cliente:
     def __init__(self, nome: str):
         self.nome = nome
 
@@ -9,45 +9,58 @@ class Pessoa:
         return f"{self.nome}"
     
 class Mercado:
-    def __init__(self, n_cad: int) -> None:
-        self.espera: list[Pessoa]=[]
-        self.caixas: list[Pessoa | None]=[]
-        for _ in range(n_cad):
+    def __init__(self, n_caix: int) -> None:
+        self.espera: list[Cliente]=[]
+        self.caixas: list[Cliente | None]=[]
+        for _ in range(n_caix):
             self.caixas.append(None)
         
-    def chegarC(self, pessoa:Pessoa):
-        self.espera.append(pessoa)
+    def chegarC(self, cliente:Cliente): 
+        self.espera.append(cliente)
     
     def chamarC(self, index: int):
-        if index < 0 or index >= len(self.caixas):
-            print("index invalido")
-            return
-        
+
         if self.caixas[index] is not None:
-            print("caixa ocupado")
+            print("fail: caixa ocupado")
             return
 
         if len(self.espera)==0:
-            print("ninguém esperando")
+            print("fail: sem clientes")
             return
         
         self.caixas[index]=self.espera[0]
 
         del self.espera[0]
         
-    def finalizarA(self, ):
-        
+    def finalizarA(self,index: int ):
+        if index < 0 or index >= len(self.caixas):
+            print("fail: caixa inexistente")
+            return None
+    
+        if self.caixas[index] is None:
+            print("fail: caixa vazio")
+            return None
+
+        aux=self.caixas[index]
+        self.caixas[index]=None
+        return aux
+    
+    # def sair(self, nome:str) -> Cliente | None:
+
 
     def __str__(self):
-        caixas=","
-        # def to_str(pessoa: Pessoa | None) -> str:
-        #     if Pessoa is None:
+        caixas=",",join([str(x) if x else "----" for x in self.caixas])
+        espera = ", ".join([str(x) for x in self.espera]),
+        return f"Cadeiras: [{caixas}]\nEspera: [{espera}]"
+    
+        # def to_str(cliente: Cliente | None) -> str:
+        #     if cliente is None:
         #         return "-----"
-        #     return str(pessoa)
+        #     return str(cliente)
         
 
 def main ():
-    mercado = Mercado("")
+    mercado = Mercado("", "")
 
     while True:
         line = input()
@@ -60,4 +73,13 @@ def main ():
             print(mercado)
             
         elif args[0] == "init":
+
+        elif args[0] == "call":
+
+        elif args[0] == "enter":
+        
+        elif args[0] == "arrive":
+            Mercado.chamarC(args[1])
+
+
 main()
