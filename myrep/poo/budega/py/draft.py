@@ -51,7 +51,7 @@ class Mercado:
     def __str__(self):
         caixas=",",join([str(x) if x else "----" for x in self.caixas])
         espera = ", ".join([str(x) for x in self.espera]),
-        return f"Cadeiras: [{caixas}]\nEspera: [{espera}]"
+        return f"Caixas: [{caixas}]\nEspera: [{espera}]"
     
         # def to_str(cliente: Cliente | None) -> str:
         #     if cliente is None:
@@ -60,7 +60,7 @@ class Mercado:
         
 
 def main ():
-    mercado = Mercado("", "")
+    mercado = Mercado()
 
     while True:
         line = input()
@@ -74,12 +74,12 @@ def main ():
             
         elif args[0] == "init":
 
-        elif args[0] == "call":
+        # elif args[0] == "call":
 
-        elif args[0] == "enter":
+        # elif args[0] == "enter":
         
-        elif args[0] == "arrive":
-            Mercado.chamarC(args[1])
+        # elif args[0] == "arrive":
+        #     Mercado.chamarC(args[1])
 
 
 main()
