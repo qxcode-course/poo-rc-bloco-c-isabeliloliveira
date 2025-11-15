@@ -2,8 +2,63 @@
     "patches": [
         {
             "label": "2025-11-15_18-31-47",
-            "content": "",
+            "content": "@@ -1,308 +0,0 @@\n-# Sequencia de n%C3%BAmero com teste (par ou impar). %0A# Se o item pretendido for par, ele ter%C3%A1 direito de emtrar na lista, mas, sen%C3%A3o, n%C3%A3o entrar%C3%A1.%0A# Se o n%C3%BAmero escolhido for um quadrado perfeito%0A%0Anumeros_aceitos%5B%5D%0Aqtd_num = int(input(%22Digite a quantidade de n%C3%BAmeros a serem testados%22))%0A%0Afor i in range(qtd_num):\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-15_19-41-08",
+            "content": "@@ -201,17 +201,16 @@\n _aceitos\n-=\n %5B%5D%0Aqtd_n\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-15_19-41-19",
+            "content": "@@ -282,17 +282,17 @@\n ))%0A%0Afor \n-_\n+i\n  in rang\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-15_19-41-42",
+            "content": "@@ -95,17 +95,17 @@\n ito de e\n-n\n+m\n trar na \n@@ -277,10 +277,8 @@\n ados\n-: \n %22))%0A\n@@ -282,17 +282,17 @@\n ))%0A%0Afor \n-i\n+_\n  in rang\n@@ -306,135 +306,4 @@\n um):\n-%0A    num_digit = int(input(%22Digite o n%C3%BAmero a ser analisado:%22))%0A    if num_digit%252==0 or:%0A        numeros_aceitos.append(num_digit)\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-15_19-54-28",
+            "content": "@@ -188,20 +188,8 @@\n eito\n-%0Aimport math\n %0A%0Anu\n@@ -284,84 +284,8 @@\n ))%0A%0A\n-def verificar(num_digit):%0A    raiz= math.isqrt(num_digit)%0A%0A    return raiz%0A%0A\n for \n@@ -376,299 +376,67 @@\n     \n-raiz = verificar(num_digit)%0A    if num_digit%252==0:%0A        numeros_aceitos.append(num_digit)%0A    elif raiz*raiz==num_digit:%0A        numeros_aceitos.append(num_digit)%0A%0A%0A%0A# No fim, vai mostrar quantos n%C3%BAmero pares tem, quantos quadrados perfeitos impares e quantos s%C3%A3o pares e quadrados perfeitos.\n+if num_digit%252==0 or:%0A        numeros_aceitos.append(num_digit)\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-15_20-10-53",
+            "content": "@@ -484,25 +484,24 @@\n (num_digit)%0A\n-%0A\n     if num_d\n@@ -631,52 +631,8 @@\n t)%0A%0A\n-# print(pares)%0A# print(perf)%0A# print(ambos)%0A\n %0A%0A# \n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-15_20-18-02",
+            "content": "@@ -419,16 +419,50 @@\n t(input(\n+%22Digite o n%C3%BAmero a ser analisado:%22\n ))%0A    r\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-15_20-18-14",
+            "content": "@@ -480,32 +480,8 @@\n 2==0\n- or raiz*raiz==num_digit\n :%0A  \n@@ -528,40 +528,8 @@\n     \n-%0A    else:%0A        qtd=+1%0A    # \n elif\n@@ -558,10 +558,8 @@\n %0A   \n- #\n     \n@@ -642,71 +642,8 @@\n os)%0A\n-# print(f%22e voc%C3%AA digitou %7Bqtd%7D que n%C3%A3o foram aceitos na lista%22)\n %0A%0A# \n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-15_20-23-43",
+            "content": "@@ -237,16 +237,67 @@\n t(input(\n+%22Digite a quantidade de n%C3%BAmeros a serem testados: %22\n ))%0A%0Adef \n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-15_20-24-05",
+            "content": "@@ -527,17 +527,8 @@\n =+1%0A\n-        %0A\n     \n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-15_20-25-38",
+            "content": "@@ -243,15 +243,8 @@\n t())\n-%0Aqtd=0 \n %0A%0Ade\n@@ -523,12 +523,20 @@\n  qtd\n-+=1%0A\n+=+1%0A        \n %0A   \n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-15_20-26-42",
+            "content": "# Sequencia de n\u00famero com teste (par ou impar). \n# Se o item pretendido for par, ele ter\u00e1 direito de entrar na lista, mas, sen\u00e3o, n\u00e3o entrar\u00e1.\n# Se o n\u00famero escolhido for um quadrado perfeito\nimport math\n\nnumeros_aceitos=[]\nqtd_num = int(input())\nqtd=0 \n\ndef verificar(num_digit):\n    raiz= math.isqrt(num_digit)\n\n    return raiz\n\nfor i in range(qtd_num):\n    num_digit = int(input())\n    raiz = verificar(num_digit)\n\n    if num_digit%2==0 or raiz*raiz==num_digit:\n        numeros_aceitos.append(num_digit)\n    \n    else:\n        qtd+=1\n\n    # elif raiz*raiz==num_digit:\n    #     numeros_aceitos.append(num_digit)\n\n# print(pares)\n# print(perf)\n# print(ambos)\n# print(f\"e voc\u00ea digitou {qtd} que n\u00e3o foram aceitos na lista\")\n\n# No fim, vai mostrar quantos n\u00famero pares tem, quantos quadrados perfeitos impares e quantos s\u00e3o pares e quadrados perfeitos.",
+            "lines": "33"
         }
     ]
 }
