@@ -42,8 +42,133 @@
         },
         {
             "label": "2025-11-14_13-26-55",
-            "content": "class Cliente:\n    def __init__(self, nome: str):\n        self.nome = nome\n\n    def getNome(self):\n        return self.nome\n    \n    def toString(self):\n        return f\"{self.nome}\"\n    \nclass Mercado:\n    def __init__(self, n_caix: int) -> None:\n        self.espera: list[Cliente]=[]\n        self.caixas: list[Cliente | None]=[]\n        for _ in range(n_caix):\n            self.caixas.append(None)\n        \n    def chegarC(self, cliente:Cliente): \n        self.espera.append(cliente)\n    \n    def chamarC(self, index: int):\n\n        if self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n\n        if len(self.espera)==0:\n            print(\"fail: sem clientes\")\n            return\n        \n        self.caixas[index]=self.espera[0]\n\n        del self.espera[0]\n        \n    def finalizarA(self,index: int ):\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return None\n    \n        if self.caixas[index] is None:\n            print(\"fail: caixa vazio\")\n            return None\n\n        aux=self.caixas[index]\n        self.caixas[index]=None\n        return aux\n    \n    # def sair(self, nome:str) -> Cliente | None:\n\n\n    def __str__(self):\n        caixas=\",\",join([str(x) if x else \"----\" for x in self.caixas])\n        espera = \", \".join([str(x) for x in self.espera]),\n        return f\"Cadeiras: [{caixas}]\\nEspera: [{espera}]\"\n    \n        # def to_str(cliente: Cliente | None) -> str:\n        #     if cliente is None:\n        #         return \"-----\"\n        #     return str(cliente)\n        \n\ndef main ():\n    mercado = Mercado(\"\", \"\")\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"finish\":\n            # break\n        elif args[0] == \"show\":\n            print(mercado)\n            \n        elif args[0] == \"init\":\n\n        elif args[0] == \"call\":\n\n        elif args[0] == \"enter\":\n        \n        elif args[0] == \"arrive\":\n            Mercado.chamarC(args[1])\n\n\nmain()",
+            "content": "@@ -1381,18 +1381,20 @@\n urn f%22Ca\n-ix\n+deir\n as: %5B%7Bca\n@@ -1626,16 +1626,22 @@\n Mercado(\n+%22%22, %22%22\n )%0A%0A    w\n@@ -1888,34 +1888,32 @@\n %22init%22:%0A%0A       \n- #\n  elif args%5B0%5D ==\n@@ -1921,34 +1921,32 @@\n %22call%22:%0A%0A       \n- #\n  elif args%5B0%5D ==\n@@ -1971,18 +1971,16 @@\n %0A       \n- #\n  elif ar\n@@ -2001,26 +2001,24 @@\n ve%22:%0A       \n- #\n      Mercado\n",
             "lines": "85"
+        },
+        {
+            "label": "2025-11-15_17-17-53",
+            "content": "@@ -1249,17 +1249,17 @@\n ixas=%22,%22\n-.\n+,\n join(%5Bst\n@@ -1616,20 +1616,25 @@\n rcado = \n-None\n+Mercado()\n %0A%0A    wh\n@@ -1771,113 +1771,17 @@\n     \n+ #\n  break%0A\n-        %0A        elif args%5B0%5D == %22init%22:%0A            mercado = Mercado(int(args%5B1%5D))%0A            %0A\n     \n@@ -1848,24 +1848,24 @@\n        %0A\n-\n         \n %0A       \n@@ -1848,32 +1848,56 @@\n        %0A        \n+elif args%5B0%5D == %22init%22:%0A\n %0A        # elif \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_17-48-26",
+            "content": "@@ -1278,17 +1278,16 @@\n se %22----\n--\n %22 for x \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-49-22",
+            "content": "@@ -1279,17 +1279,16 @@\n e %22-----\n- \n %22 for x \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-49-38",
+            "content": "@@ -1278,14 +1278,14 @@\n se %22\n- \n -----\n+ \n %22 fo\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-50-04",
+            "content": "@@ -1274,16 +1274,17 @@\n x else %22\n+ \n -----%22 f\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-50-14",
+            "content": "@@ -1248,17 +1248,16 @@\n aixas=%22,\n- \n %22.join(%5B\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-50-26",
+            "content": "@@ -1433,16 +1433,18 @@\n %0A       \n+ #\n  def to_\n@@ -1483,24 +1483,26 @@\n str:%0A       \n+ #\n      if clie\n@@ -1517,24 +1517,26 @@\n one:%0A       \n+ #\n          ret\n@@ -1546,32 +1546,34 @@\n  %22-----%22%0A       \n+ #\n      return str(\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-52-12",
+            "content": "@@ -2104,9 +2104,8 @@\n %0A%0Amain()\n-%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_17-57-31",
+            "content": "@@ -1362,16 +1362,17 @@\n espera%5D)\n+,\n %0A       \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_18-00-42",
+            "content": "@@ -52,26 +52,24 @@\n        self.\n-__\n nome = nome%0A\n@@ -68,16 +68,16 @@\n  = nome%0A\n+\n %0A    def\n@@ -108,26 +108,24 @@\n return self.\n-__\n nome%0A    %0A  \n@@ -138,32 +138,32 @@\n toString(self):%0A\n+\n         return f\n@@ -169,18 +169,16 @@\n f%22%7Bself.\n-__\n nome%7D%22%0A \n@@ -1735,19 +1735,22 @@\n %5B0%5D == %22\n-end\n+finish\n %22:%0A     \n@@ -2100,56 +2100,8 @@\n %5D)%0A%0A\n-        elif args%5B0%5D == %22finish%22:%0A            %0A%0A\n %0Amai\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_18-05-45",
+            "content": "@@ -2098,34 +2098,32 @@\n rgs%5B1%5D)%0A%0A       \n- #\n  elif args%5B0%5D ==\n@@ -2133,16 +2133,28 @@\n inish%22:%0A\n+            \n %0A%0A%0Amain(\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-15_18-06-11",
+            "content": "@@ -2022,32 +2022,34 @@\n         %0A       \n+ #\n  elif args%5B0%5D ==\n@@ -2062,30 +2062,32 @@\n ve%22:%0A       \n+ #\n      \n-m\n+M\n ercado.chama\n@@ -2089,28 +2089,24 @@\n chamarC(\n-int(\n args%5B1%5D)\n )%0A%0A     \n@@ -2097,17 +2097,16 @@\n args%5B1%5D)\n-)\n %0A%0A      \n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-15_18-08-31",
+            "content": "@@ -2085,24 +2085,28 @@\n chamarC(\n+int(\n args%5B1%5D)\n %0A%0A      \n@@ -2097,16 +2097,17 @@\n args%5B1%5D)\n+)\n %0A%0A      \n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-15_18-09-16",
+            "content": "@@ -2061,35 +2061,8 @@\n e%22:%0A\n-            nome = args%5B1%5D%0A\n     \n@@ -2085,20 +2085,23 @@\n chamarC(\n-nome\n+args%5B1%5D\n )%0A%0A     \n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-15_18-09-45",
+            "content": "@@ -2106,18 +2106,18 @@\n rcado.ch\n-eg\n+am\n arC(nome\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-15_18-10-44",
+            "content": "@@ -1943,32 +1943,34 @@\n         %0A       \n+ #\n  elif args%5B0%5D ==\n@@ -1982,62 +1982,8 @@\n l%22:%0A\n-            mercado.chamarC(int(args%5B1%5D))%0A            \n %0A   \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-15_18-12-21",
+            "content": "@@ -2018,16 +2018,28 @@\n gs%5B1%5D))%0A\n+            \n %0A       \n@@ -2120,18 +2120,16 @@\n         \n- #\n  nome = \n@@ -2164,23 +2164,20 @@\n chegarC(\n-args%5B1%5D\n+nome\n )%0A%0A     \n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-12-40",
+            "content": "@@ -2097,16 +2097,45 @@\n rrive%22:%0A\n+            # nome = args%5B1%5D%0A\n         \n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-13-07",
+            "content": "@@ -2133,29 +2133,16 @@\n args%5B1%5D)\n-%0A            \n %0A%0A      \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-15_18-14-36",
+            "content": "@@ -2134,16 +2134,28 @@\n rgs%5B1%5D)%0A\n+            \n %0A%0A      \n@@ -2147,32 +2147,34 @@\n        %0A%0A       \n+ #\n  elif args%5B0%5D ==\n@@ -2188,47 +2188,8 @@\n h%22:%0A\n-            mercado.finalizarA(args%5B1%5D)\n %0A%0A%0Am\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-16-09",
+            "content": "@@ -2135,34 +2135,32 @@\n gs%5B1%5D)%0A%0A%0A       \n- #\n  elif args%5B0%5D ==\n@@ -2177,18 +2177,16 @@\n %0A       \n- #\n      mer\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-16-28",
+            "content": "@@ -2135,32 +2135,34 @@\n gs%5B1%5D)%0A%0A%0A       \n+ #\n  elif args%5B0%5D ==\n@@ -2171,32 +2171,34 @@\n finish%22:%0A       \n+ #\n      mercado.fin\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-16-37",
+            "content": "@@ -2201,28 +2201,24 @@\n alizarA(\n-int(\n args%5B1%5D)\n )%0A%0A%0Amain\n@@ -2209,17 +2209,16 @@\n args%5B1%5D)\n-)\n %0A%0A%0Amain(\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-19-46",
+            "content": "@@ -2009,32 +2009,68 @@\n rC(int(args%5B1%5D))\n+%0A%0A        # elif args%5B0%5D == %22enter%22:\n %0A        %0A      \n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-15_18-20-20",
+            "content": "class Cliente:\n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def getNome(self):\n        return self.__nome\n    \n    def toString(self):\n        return f\"{self.__nome}\"\n    \nclass Mercado:\n    def __init__(self, n_caix: int) -> None:\n        self.espera: list[Cliente]=[]\n        self.caixas: list[Cliente | None]=[]\n        for _ in range(n_caix):\n            self.caixas.append(None)\n        \n    def chegarC(self, cliente:Cliente): \n        self.espera.append(cliente)\n    \n    def chamarC(self, index: int):\n\n        if self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n\n        if len(self.espera)==0:\n            print(\"fail: sem clientes\")\n            return\n        \n        self.caixas[index]=self.espera[0]\n\n        del self.espera[0]\n        \n    def finalizarA(self,index: int ):\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return None\n    \n        if self.caixas[index] is None:\n            print(\"fail: caixa vazio\")\n            return None\n\n        aux=self.caixas[index]\n        self.caixas[index]=None\n        return aux\n    \n    # def sair(self, nome:str) -> Cliente | None:\n\n\n    def __str__(self):\n        caixas=\", \".join([str(x) if x else \"-----\" for x in self.caixas])\n        espera = \", \".join([str(x) for x in self.espera])\n        return f\"Caixas: [{caixas}]\\nEspera: [{espera}]\"\n    \n        def to_str(cliente: Cliente | None) -> str:\n            if cliente is None:\n                return \"-----\"\n            return str(cliente)\n        \n\ndef main ():\n    mercado = None\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        \n        elif args[0] == \"init\":\n            mercado = Mercado(int(args[1]))\n            \n        elif args[0] == \"show\":\n            print(mercado)\n            \n        \n        elif args[0] == \"call\":\n            mercado.chamarC(int(args[1]))\n        \n        elif args[0] == \"arrive\":\n            mercado.chegarC(args[1])\n\n\n        elif args[0] == \"finish\":\n            mercado.finalizarA(int(args[1]))\n\n\nmain()\n",
+            "lines": "91"
         }
     ]
 }

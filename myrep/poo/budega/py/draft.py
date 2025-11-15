@@ -1,12 +1,12 @@
 class Cliente:
     def __init__(self, nome: str):
-        self.nome = nome
+        self.__nome = nome
 
     def getNome(self):
-        return self.nome
+        return self.__nome
     
     def toString(self):
-        return f"{self.nome}"
+        return f"{self.__nome}"
     
 class Mercado:
     def __init__(self, n_caix: int) -> None:
@@ -49,37 +49,43 @@ class Mercado:
 
 
     def __str__(self):
-        caixas=",",join([str(x) if x else "----" for x in self.caixas])
-        espera = ", ".join([str(x) for x in self.espera]),
+        caixas=", ".join([str(x) if x else "-----" for x in self.caixas])
+        espera = ", ".join([str(x) for x in self.espera])
         return f"Caixas: [{caixas}]\nEspera: [{espera}]"
     
-        # def to_str(cliente: Cliente | None) -> str:
-        #     if cliente is None:
-        #         return "-----"
-        #     return str(cliente)
+        def to_str(cliente: Cliente | None) -> str:
+            if cliente is None:
+                return "-----"
+            return str(cliente)
         
 
 def main ():
-    mercado = Mercado()
+    mercado = None
 
     while True:
         line = input()
         print("$" + line)
         args = line.split(" ")
 
-        if args[0] == "finish":
-            # break
+        if args[0] == "end":
+            break
+        
+        elif args[0] == "init":
+            mercado = Mercado(int(args[1]))
+            
         elif args[0] == "show":
             print(mercado)
             
-        elif args[0] == "init":
-
-        # elif args[0] == "call":
-
-        # elif args[0] == "enter":
         
-        # elif args[0] == "arrive":
-        #     Mercado.chamarC(args[1])
+        elif args[0] == "call":
+            mercado.chamarC(int(args[1]))
+        
+        elif args[0] == "arrive":
+            mercado.chegarC(args[1])
+
+
+        elif args[0] == "finish":
+            mercado.finalizarA(int(args[1]))
 
 
 main()
