@@ -2,8 +2,38 @@
     "patches": [
         {
             "label": "2025-11-16_00-37-43",
-            "content": "",
+            "content": "@@ -1 +0,0 @@\n-%0A\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-16_00-47-15",
+            "content": "@@ -1,336 +1 @@\n-class Lead:%0A    def __init__(self, hardness: str, thickness: int, size: int):%0A        self.__hardness = hardness%0A        self.__thickness = thickness%0A        self.__size = size%0A%0A    def usagePerSheet():%0A%0A    %0Aclass Pencil:%0A    def __init__(self):%0A        self.__thickness: int %0A        self.__tip: Lead %7C None%0A        # self.__barrel: \n %0A\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-11-16_00-56-29",
+            "content": "@@ -1,65 +1,4 @@\n-#tentando deixar tudo em ingl%C3%AAs pelo menos uma vez na vida.%0A%0A\n clas\n@@ -201,252 +201,8 @@\n ):%0A%0A\n-%0A    def getHardness(self):%0A        return self.__hardness%0A    %0A    def getThickness(self):%0A        return self.__thickness%0A    %0A    def getSize(self):%0A        return self.__size%0A    %0A    def setSize(self, size: int):%0A        self.__size=size%0A%0A\n     \n@@ -303,16 +303,16 @@\n  %7C None%0A\n+\n         \n@@ -333,52 +333,4 @@\n l: %0A\n-    %0A    def insert():%0A        caliber: float %0A%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-16_01-06-02",
+            "content": "@@ -119,12 +119,10 @@\n ss: \n-floa\n+in\n t, s\n@@ -506,145 +506,13 @@\n ze%0A%0A\n-    def __str__(self) -%3E str:%0A        return f%22calibre: %7Bself.__thickness%7D, bico: %5B%7Bself.__hardness%7D%5D, tambor: %3C%5B%7Bself.__barrel%7D%5D%3E%22%0A\n     %0A\n+\n clas\n@@ -654,20 +654,16 @@\n  insert(\n-self\n ):%0A     \n@@ -665,28 +665,25 @@\n         \n-self.__thickness:\n+caliber: float\n  %0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-11-16_15-56-33",
+            "content": "@@ -256,20 +256,16 @@\n erSheet(\n-self\n ):%0A%0A%0A   \n@@ -796,20 +796,8 @@\n self\n-, Lead: Lead\n ):%0A \n@@ -827,51 +827,4 @@\n : %0A%0A\n-def main(self):%0A    pencil = Pencil()%0A%0A%0Amain()%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-16_16-23-06",
+            "content": "@@ -267,93 +267,8 @@\n f):%0A\n-        if self.__hardness == %22HB%22:%0A            return 1%0A        elif self.__hardness\n %0A%0A  \n@@ -881,316 +881,9 @@\n l()%0A\n- %0A    while True:%0A        line = input()%0A        print(%22$%22+line)%0A        if args%5B0%5D==%22end%22:%0A            break%0A        elif args%5B0%5D==%22show%22:%0A            print(pencil)%0A        %0A        elif args%5B0%5D==%22insert%22:%0A            lead=Lead(float(args%5B1%5D), args%5B2%5D, int(args%5B3%5D))%0A            pencil.insert(lead)%0A        \n+%0A\n %0Amai\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-16_16-54-35",
+            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    def __str__(self) -> str:\n        return f\"calibre: {self.__thickness}, bico: [{self.__hardness}], tambor: <[{self.__barrel}]>\"\n    \nclass Pencil:\n    def __init__(self):\n        self.__thickness: int \n        self.__tip: Lead | None\n        # self.__barrel: \n    \n    def insert(self, Lead: Lead):\n        self.__thickness: \n\ndef main(self):\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(float(args[1]), args[2], int(args[3]))\n            pencil.insert(lead)\n        \nmain()\n",
+            "lines": "53"
         }
     ]
 }
