@@ -58,3 +58,9 @@
 2025-11-15 20:25:38, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:32
 2025-11-15 20:26:42, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:33
 2025-11-15 20:27:57, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-15 23:42:24, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-15 23:42:25, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:43
+2025-11-15 23:50:30, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:42
+2025-11-15 23:53:50, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-15 23:57:53, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-15 23:57:54, EXEC, v:1, k:poo@array, mode:LOCK, rate:0

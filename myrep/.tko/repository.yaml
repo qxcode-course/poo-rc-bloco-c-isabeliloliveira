@@ -12,19 +12,20 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-isabeliloliveira/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-15 19:20:51'
+  cache_timestamp: '2025-11-15 23:42:18'
   filters:
   - listas
 expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
 tasks:
+  poo@array: '{rate:100, alone:10, study:180}'
   poo@budega: '{rate:100}'
 flags:
   quests: 1
   tracks: 0
-  tasks: 1
+  tasks: 0
   graph: 1
   xray: 0
 lang: py
-selected: poo@array
+selected: poo@lapiseira

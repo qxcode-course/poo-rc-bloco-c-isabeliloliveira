@@ -57,8 +57,53 @@
         },
         {
             "label": "2025-11-15_20-26-42",
-            "content": "# Sequencia de n\u00famero com teste (par ou impar). \n# Se o item pretendido for par, ele ter\u00e1 direito de entrar na lista, mas, sen\u00e3o, n\u00e3o entrar\u00e1.\n# Se o n\u00famero escolhido for um quadrado perfeito\nimport math\n\nnumeros_aceitos=[]\nqtd_num = int(input())\nqtd=0 \n\ndef verificar(num_digit):\n    raiz= math.isqrt(num_digit)\n\n    return raiz\n\nfor i in range(qtd_num):\n    num_digit = int(input())\n    raiz = verificar(num_digit)\n\n    if num_digit%2==0 or raiz*raiz==num_digit:\n        numeros_aceitos.append(num_digit)\n    \n    else:\n        qtd+=1\n\n    # elif raiz*raiz==num_digit:\n    #     numeros_aceitos.append(num_digit)\n\n# print(pares)\n# print(perf)\n# print(ambos)\n# print(f\"e voc\u00ea digitou {qtd} que n\u00e3o foram aceitos na lista\")\n\n# No fim, vai mostrar quantos n\u00famero pares tem, quantos quadrados perfeitos impares e quantos s\u00e3o pares e quadrados perfeitos.",
+            "content": "@@ -188,76 +188,8 @@\n eito\n-%0A%0A# Primeira tentativa usando input(ideia inicial mas que n%C3%A3o rodou)\n %0Aimp\n@@ -250,32 +250,8 @@\n d=0 \n-%0AcontA=0%0AcontP=0%0AcontQ=0\n %0A%0Ade\n@@ -504,182 +504,12 @@\n it)%0A\n+\n     \n-    if num_digit%252==0:%0A            contP+=1%0A        if raiz*raiz==num_digit:%0A            contQ+=1%0A        if num_digit%252==0 and raiz*raiz==num_digit:%0A            contA+=1\n %0A   \n",
             "lines": "33"
+        },
+        {
+            "label": "2025-11-15_23-42-25",
+            "content": "@@ -588,25 +588,24 @@\n (num_digit)%0A\n-%0A\n         if n\n@@ -875,176 +875,117 @@\n t)%0A%0A\n+# \n print(\n-f%22Na sua lista de numeros aceitos tem %7BcontP%7D pares, %7BcontQ%7D quadrados perfeitos, %7BcontA%7D que atendem as duas condi%C3%A7%C3%B5es e %7Bqtd%7D que n%C3%A3o atende nenhuma delas.\n+pares)%0A# print(perf)%0A# print(ambos)%0A# print(f%22e voc%C3%AA digitou %7Bqtd%7D que n%C3%A3o foram aceitos na lista\n %22)%0A%0A\n-%0A\n # No\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-15_23-50-30",
+            "content": "@@ -253,18 +253,16 @@\n  rodou)%0A\n-# \n import m\n@@ -266,18 +266,16 @@\n t math%0A%0A\n-# \n numeros_\n@@ -285,18 +285,16 @@\n itos=%5B%5D%0A\n-# \n qtd_num \n@@ -312,27 +312,23 @@\n ())%0A\n-# \n qtd=0 %0A\n-# \n contA=0%0A\n # co\n@@ -327,18 +327,16 @@\n A=0%0A\n-# \n contP=0%0A\n # co\n@@ -331,18 +331,16 @@\n contP=0%0A\n-# \n contQ=0%0A\n@@ -340,18 +340,16 @@\n ontQ=0%0A%0A\n-# \n def veri\n@@ -366,18 +366,16 @@\n digit):%0A\n-# \n     raiz\n@@ -395,26 +395,24 @@\n num_digit)%0A%0A\n-# \n     return r\n@@ -416,18 +416,16 @@\n n raiz%0A%0A\n-# \n for i in\n@@ -441,18 +441,16 @@\n d_num):%0A\n-# \n     num_\n@@ -470,18 +470,16 @@\n nput())%0A\n-# \n     raiz\n@@ -499,26 +499,24 @@\n num_digit)%0A%0A\n-# \n     if num_d\n@@ -542,34 +542,32 @@\n aiz==num_digit:%0A\n-# \n         numeros_\n@@ -593,18 +593,16 @@\n digit)%0A%0A\n-# \n         \n@@ -620,18 +620,16 @@\n t%252==0:%0A\n-# \n         \n@@ -637,26 +637,24 @@\n    contP+=1%0A\n-# \n         if r\n@@ -666,34 +666,32 @@\n aiz==num_digit:%0A\n-# \n             cont\n@@ -691,26 +691,24 @@\n    contQ+=1%0A\n-# \n         if n\n@@ -747,18 +747,16 @@\n _digit:%0A\n-# \n         \n@@ -768,18 +768,16 @@\n ontA+=1%0A\n-# \n     else\n@@ -778,18 +778,16 @@\n   else:%0A\n-# \n         \n@@ -798,742 +798,46 @@\n =1%0A%0A\n-%0A# print(f%22Na sua lista de numeros aceitos tem %7BcontP%7D pares, %7BcontQ%7D quadrados perfeitos, %7BcontA%7D que atendem as duas condi%C3%A7%C3%B5es e %7Bqtd%7D que n%C3%A3o atende nenhuma delas.%22)%0A%0A%0A# No fim, vai mostrar quantos n%C3%BAmero pares tem, quantos quadrados perfeitos impares e quantos s%C3%A3o pares e quadrados perfeitos.%0A%0A%0A#Tentativa oficial p%C3%B3s execu%C3%A7%C3%B5es%0A%0Aimport math%0A%0Aqtd_num = 10 #o que eu pensei era o usu%C3%A1rio digitar um n%C3%BAmero, mas como o TKO n%C3%A3o aceita o input, resolvi demonstrar definindo o n%C3%BAmero mesmo.%0Anumeros_escolhidos=%5B2, 3, 9, 64, 8, 49, 7, 13, %5D %0Anumeros_aceitos=%5B%5D%0Aqtd=0 %0AcontA=0%0AcontP=0%0AcontQ=0%0A%0Afor i in range (qtd_num):%0A    raiz=math.isqrt(numeros_escolhidos%5Bi%5D)%0A    if numeros_escolhidos%5Bi%5D%252==0 or raiz*raiz==numeros_escolhidos%5Bi%5D\n+    # elif raiz*raiz==num_digit\n :%0A   \n+ #\n     \n@@ -867,276 +867,15 @@\n (num\n-eros_escolhidos%5Bi%5D)%0A        if numeros_escolhidos%5Bi%5D%252==0:%0A            contP+=1%0A        if raiz*raiz==numeros_escolhidos%5Bi%5D:%0A            contQ+=1%0A        if numeros_escolhidos%5Bi%5D%252==0 and raiz*raiz==numeros_escolhidos%5Bi%5D:%0A            contA+=1%0A    else:%0A        qtd+=1%0A\n+_digit)\n %0A%0Apr\n@@ -1039,8 +1039,135 @@\n las.%22)%0A%0A\n+%0A# No fim, vai mostrar quantos n%C3%BAmero pares tem, quantos quadrados perfeitos impares e quantos s%C3%A3o pares e quadrados perfeitos.\n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-16_00-15-58",
+            "content": "@@ -1381,14 +1381,8 @@\n 13, \n-10, 25\n %5D %0An\n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-16_00-17-46",
+            "content": "@@ -1987,16 +1987,17 @@\n e atende\n+m\n  as duas\n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-16_00-20-26",
+            "content": "@@ -1,16 +1,195 @@\n #\n-A ideia ini\n+ Sequencia de n%C3%BAmero com teste (par ou impar). %0A# Se o item pretendido for par, ele ter%C3%A1 direito de entrar na lista, mas, sen%C3%A3o, n%C3%A3o entrar%C3%A1.%0A# Se o n%C3%BAmero escolhido for um quadrado perfeito\n %0A%0A# \n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-16_00-21-30",
+            "content": "@@ -9,875 +9,8 @@\n  ini\n-cial seria implementar uma lista para os n%C3%BAmeros aceitos(a partir da an%C3%A1lise de cada n%C3%BAmero analisado pela estrutura condicional dentro do looping), %0A# n%C3%BAmeros esses que seriam dados pelo usu%C3%A1rio, atrav%C3%A9s de um for com n%C3%BAmero de execu%C3%A7%C3%B5es tamb%C3%A9m definido pelo usu%C3%A1rio (qtd_num). Ou seja, o usu%C3%A1rio informaria a %0A# quantidade (qtd_num) de numeros a ser testada, iriamos testar dentro de um comando de repeti%C3%A7ao dentro do for, que est%C3%A1 com numero de execu%C3%A7%C3%B5es de acordo com o %0A# que o usuario definiu antes, em que, a cada repeti%C3%A7%C3%A3o, um n%C3%BAmero seria lido e analisado. Para entrar na lista de numeros aceitos, o numero escolhido tem que ser %0A# par ou um quadrado perfeito. Sendo que fiz os testes tanto para entrar lista quanto para contar quantos s%C3%A3o pares, quantos s%C3%A3o quadrados perfeitos, ambos ou que n%C3%A3o %0A# atendem nenhuma condi%C3%A7%C3%A3o e por isso n%C3%A3o entraram na lista.\n %0A%0A# \n@@ -997,106 +997,8 @@\n %C3%A7%C3%B5es\n- (como ao terminar n%C3%A3o executou corretamente por n%C3%A3o aceitar entrada do usu%C3%A1rio, fiz dessa forma).\n %0A%0Aim\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_00-31-39",
+            "content": "@@ -2666,16 +2666,17 @@\n qtd+=1%0A%0A\n+%0A\n print(f%22\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_00-31-55",
+            "content": "@@ -1975,45 +1975,8 @@\n math\n- #importei para poder calcular a raiz\n %0A%0Aqt\n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-16_00-37-06",
+            "content": "#A ideia inicial seria implementar uma lista para os n\u00fameros aceitos(a partir da an\u00e1lise de cada n\u00famero analisado pela estrutura condicional dentro do looping), \n# n\u00fameros esses que seriam dados pelo usu\u00e1rio, atrav\u00e9s de um for com n\u00famero de execu\u00e7\u00f5es tamb\u00e9m definido pelo usu\u00e1rio (qtd_num). Ou seja, o usu\u00e1rio informaria a \n# quantidade (qtd_num) de numeros a ser testada, iriamos testar dentro de um comando de repeti\u00e7ao dentro do for, que est\u00e1 com numero de execu\u00e7\u00f5es de acordo com o \n# que o usuario definiu antes, em que, a cada repeti\u00e7\u00e3o, um n\u00famero seria lido e analisado. Para entrar na lista de numeros aceitos, o numero escolhido tem que ser \n# par ou um quadrado perfeito. Sendo que fiz os testes tanto para entrar lista quanto para contar quantos s\u00e3o pares, quantos s\u00e3o quadrados perfeitos, ambos ou que n\u00e3o \n# atendem nenhuma condi\u00e7\u00e3o e por isso n\u00e3o entraram na lista.\n\n# Primeira tentativa usando input(ideia inicial mas que n\u00e3o rodou)\n# import math\n\n# numeros_aceitos=[]\n# qtd_num = int(input())\n# qtd=0 \n# contA=0\n# contP=0\n# contQ=0\n\n# def verificar(num_digit):\n#     raiz= math.isqrt(num_digit)\n\n#     return raiz\n\n# for i in range(qtd_num):\n#     num_digit = int(input())\n#     raiz = verificar(num_digit)\n\n#     if num_digit%2==0 or raiz*raiz==num_digit:\n#         numeros_aceitos.append(num_digit)\n\n#         if num_digit%2==0:\n#             contP+=1\n#         if raiz*raiz==num_digit:\n#             contQ+=1\n#         if num_digit%2==0 and raiz*raiz==num_digit:\n#             contA+=1\n#     else:\n#         qtd+=1\n\n\n# print(f\"Na sua lista de numeros aceitos tem {contP} pares, {contQ} quadrados perfeitos, {contA} que atendem as duas condi\u00e7\u00f5es e {qtd} que n\u00e3o atende nenhuma delas.\")\n\n\n# No fim, vai mostrar quantos n\u00famero pares tem, quantos quadrados perfeitos impares e quantos s\u00e3o pares e quadrados perfeitos.\n\n\n#Tentativa oficial p\u00f3s execu\u00e7\u00f5es (como ao terminar n\u00e3o executou corretamente por n\u00e3o aceitar entrada do usu\u00e1rio, fiz dessa forma).\n\nimport math #importei para poder calcular a raiz\n\nqtd_num = 10 #o que eu pensei era o usu\u00e1rio digitar um n\u00famero, mas como o TKO n\u00e3o aceita o input, resolvi demonstrar definindo o n\u00famero mesmo.\nnumeros_escolhidos=[2, 3, 9, 64, 8, 49, 7, 13, 10, 25] \nnumeros_aceitos=[]\nqtd=0 \ncontA=0\ncontP=0\ncontQ=0\n\nfor i in range (qtd_num):\n    raiz=math.isqrt(numeros_escolhidos[i])\n    if numeros_escolhidos[i]%2==0 or raiz*raiz==numeros_escolhidos[i]:\n        numeros_aceitos.append(numeros_escolhidos[i])\n        if numeros_escolhidos[i]%2==0:\n            contP+=1\n        if raiz*raiz==numeros_escolhidos[i]:\n            contQ+=1\n        if numeros_escolhidos[i]%2==0 and raiz*raiz==numeros_escolhidos[i]:\n            contA+=1\n    else:\n        qtd+=1\n\nprint(f\"Na sua lista de numeros aceitos tem {contP} pares, {contQ} quadrados perfeitos, {contA} que atende as duas condi\u00e7\u00f5es e {qtd} que n\u00e3o atende nenhuma delas.\")\n\n",
+            "lines": "72"
         }
     ]
 }
