@@ -122,7 +122,32 @@
         },
         {
             "label": "2025-11-16_21-37-57",
-            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness==\"2B\":\n            return 2\n        elif self.__hardness==\"4B\":\n            return 4\n        elif self.__hardness==\"6B\":\n            return 6\n        else:\n            return 0\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    # def __str__(self) -> str:\n    #     return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n    \nclass Pencil:\n    def __init__(self):\n        self.__thickness= None\n        self.__tip= Lead | None\n        self.__barrel: list[Lead] = []\n\n    def set_thickness(self, thickness: float):\n        self.__thickness = thickness\n\n    def insert(self, lead: Lead):\n        if lead.getThickness()!=self.__thickness:\n            print(\"fail: calibre invalido\")\n            return\n        self.__barrel.append(lead) \n\n    \n    def __str__(self) -> str:\n        return f\"calibre: {self.__thickness}, bico: [{self.__tip}], tambor: <[{self.__barrel}]>\"\n    \ndef main():\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        args= line.split(\" \")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(args[2], float(args[1]), int(args[3]))\n            pencil.insert(lead)\n\n        elif args[0]==\"init\":\n            pencil.set_thickness(float(args[1]))\nmain()",
+            "content": "@@ -1402,16 +1402,17 @@\n ambor: %3C\n+%5B\n %7Bself.__\n@@ -1418,16 +1418,17 @@\n _barrel%7D\n+%5D\n %3E%22%0A    %0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_00-41-01",
+            "content": "@@ -1402,16 +1402,31 @@\n ambor: %3C\n+%7Bself.__barrel%7D\n %3E%22%0A    %0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_01-17-09",
+            "content": "@@ -968,16 +968,23 @@\n f.__tip=\n+ Lead %7C\n  None%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_05-08-27",
+            "content": "@@ -1399,23 +1399,8 @@\n r: %3C\n-%7Bself.__barrel%7D\n %3E%22%0A \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_05-08-49",
+            "content": "@@ -973,13 +973,8 @@\n ip= \n-Lead%7C\n None\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_05-09-23",
+            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness==\"2B\":\n            return 2\n        elif self.__hardness==\"4B\":\n            return 4\n        elif self.__hardness==\"6B\":\n            return 6\n        else:\n            return 0\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    # def __str__(self) -> str:\n    #     return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n    \nclass Pencil:\n    def __init__(self):\n        self.__thickness= None\n        self.__tip= Lead|None\n        self.__barrel: list[Lead] = []\n\n    def set_thickness(self, thickness: float):\n        self.__thickness = thickness\n\n    def insert(self, lead: Lead):\n        if lead.getThickness()!=self.__thickness:\n            print(\"fail: calibre invalido\")\n            return\n        self.__barrel.append(lead) \n\n    \n    def __str__(self) -> str:\n        return f\"calibre: {self.__thickness}, bico: [{self.__tip}], tambor: <{self.__barrel}>\"\n    \ndef main():\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        args= line.split(\" \")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(args[2], float(args[1]), int(args[3]))\n            pencil.insert(lead)\n\n        elif args[0]==\"init\":\n            pencil.set_thickness(float(args[1]))\nmain()",
             "lines": "73"
         }
     ]

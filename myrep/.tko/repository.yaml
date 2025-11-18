@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-isabeliloliveira/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-16 19:56:13'
+  cache_timestamp: '2025-11-18 13:22:28'
   filters:
   - listas
 expanded:
@@ -21,6 +21,7 @@ expanded:
 tasks:
   poo@array: '{rate:100, alone:10, study:180}'
   poo@budega: '{rate:100}'
+  poo@lapiseira: '{rate:7}'
 flags:
   quests: 1
   tracks: 0

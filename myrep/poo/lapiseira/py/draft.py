@@ -36,7 +36,7 @@ class Lead:
 class Pencil:
     def __init__(self):
         self.__thickness= None
-        self.__tip= Lead | None
+        self.__tip= Lead|None
         self.__barrel: list[Lead] = []
 
     def set_thickness(self, thickness: float):
