@@ -32,8 +32,98 @@
         },
         {
             "label": "2025-11-16_16-54-35",
-            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    def __str__(self) -> str:\n        return f\"calibre: {self.__thickness}, bico: [{self.__hardness}], tambor: <[{self.__barrel}]>\"\n    \nclass Pencil:\n    def __init__(self):\n        self.__thickness: int \n        self.__tip: Lead | None\n        # self.__barrel: \n    \n    def insert(self, Lead: Lead):\n        self.__thickness: \n\ndef main(self):\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(float(args[1]), args[2], int(args[3]))\n            pencil.insert(lead)\n        \nmain()\n",
+            "content": "@@ -596,18 +596,16 @@\n ize%0A%0A   \n- #\n  def __s\n@@ -626,18 +626,16 @@\n str:%0A   \n- #\n      ret\n@@ -640,17 +640,25 @@\n eturn f%22\n-%5B\n+calibre: \n %7Bself.__\n@@ -663,25 +663,33 @@\n __thickness%7D\n-:\n+, bico: %5B\n %7Bself.__hard\n@@ -697,17 +697,29 @@\n ess%7D\n-:\n+%5D, tambor: %3C%5B\n %7Bself.__\n size\n@@ -718,14 +718,17 @@\n f.__\n-size\n+barrel\n %7D%5D\n+%3E\n %22%0A  \n@@ -928,150 +928,8 @@\n : %0A%0A\n-    %0A    def __str__(self) -%3E str:%0A        return f%22calibre: %7Bself.__thickness%7D, bico: %5B%7Bself.__hardness%7D%5D, tambor: %3C%5B%7Bself.__barrel%7D%5D%3E%22%0A    %0A\n def \n",
             "lines": "53"
+        },
+        {
+            "label": "2025-11-16_20-11-22",
+            "content": "@@ -1146,38 +1146,8 @@\n ne)%0A\n-        args= line.split(%22 %22)%0A\n     \n@@ -1377,17 +1377,16 @@\n t(lead)%0A\n-%0A\n         \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-16_20-13-45",
+            "content": "@@ -348,18 +348,16 @@\n hardness\n-==\n %0A%0A    de\n@@ -803,32 +803,34 @@\n d %7C None%0A       \n+ #\n  self.__barrel: \n@@ -833,23 +833,8 @@\n el: \n-list%5BLead%5D = %5B%5D\n %0A   \n@@ -860,33 +860,18 @@\n lf, \n-thickness, hardness, size\n+Lead: Lead\n ):%0A \n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-16_20-28-26",
+            "content": "@@ -1078,16 +1078,20 @@\n ef main(\n+self\n ):%0A    p\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-16_20-28-54",
+            "content": "@@ -1446,78 +1446,8 @@\n     \n-elif args%5B0%5D==%22init%22:%0A            pencil.set_thickness(float(args%5B1%5D))\n %0Amai\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-16_20-34-24",
+            "content": "@@ -354,10 +354,8 @@\n ss==\n-%22%22\n %0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-16_20-34-39",
+            "content": "@@ -352,17 +352,16 @@\n ness==%22%22\n-:\n %0A%0A    de\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-16_20-34-45",
+            "content": "@@ -355,182 +355,10 @@\n s==%22\n-2B%22:%0A            return 2%0A        elif self.__hardness==%224B%22:%0A            return 4%0A        elif self.__hardness==%226B%22:%0A            return 6%0A        else:%0A            return 0\n+%22:\n %0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-16_20-37-16",
+            "content": "@@ -1050,18 +1050,33 @@\n lf, \n-lead: Lead\n+thickness, hardness, size\n ):%0A \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-16_20-44-17",
+            "content": "@@ -1071,43 +1071,25 @@\n     \n-%0A        self.__barrel.append(lead)\n+self.__thickness:\n  %0A%0A \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-16_20-46-05",
+            "content": "@@ -944,20 +944,20 @@\n ckness: \n-None\n+int \n %0A       \n@@ -1071,110 +1071,8 @@\n     \n-if lead.getThickness!=self.__thickness:%0A            print(%22fail: calibre invalido%22)%0A            return\n %0A   \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_20-58-11",
+            "content": "@@ -1028,97 +1028,8 @@\n     \n-    %0A    def set_thickness(self, thickness: float):%0A        self.__thickness = thickness%0A\n %0A   \n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-16_21-00-28",
+            "content": "@@ -942,17 +942,17 @@\n hickness\n-=\n+:\n  None%0A  \n@@ -1020,16 +1020,24 @@\n d%5D = %5B%5D%0A\n+        \n %0A    def\n@@ -1884,12 +1884,13 @@\n %5B1%5D))%0Amain()\n+%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_21-02-17",
+            "content": "@@ -967,17 +967,24 @@\n lf.__tip\n-=\n+: Lead %7C\n  None%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_21-30-09",
+            "content": "@@ -1161,18 +1161,16 @@\n hickness\n-()\n !=self._\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_21-30-41",
+            "content": "@@ -1722,17 +1722,8 @@\n ead(\n-args%5B2%5D, \n floa\n@@ -1733,16 +1733,25 @@\n rgs%5B1%5D),\n+ args%5B2%5D,\n  int(arg\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_21-32-01",
+            "content": "@@ -972,15 +972,8 @@\n tip=\n- Lead %7C\n  Non\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_21-34-29",
+            "content": "@@ -1386,19 +1386,24 @@\n %7Bself.__\n-tip\n+hardness\n %7D%5D, tamb\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-16_21-37-57",
+            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness==\"2B\":\n            return 2\n        elif self.__hardness==\"4B\":\n            return 4\n        elif self.__hardness==\"6B\":\n            return 6\n        else:\n            return 0\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    # def __str__(self) -> str:\n    #     return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n    \nclass Pencil:\n    def __init__(self):\n        self.__thickness= None\n        self.__tip= Lead | None\n        self.__barrel: list[Lead] = []\n\n    def set_thickness(self, thickness: float):\n        self.__thickness = thickness\n\n    def insert(self, lead: Lead):\n        if lead.getThickness()!=self.__thickness:\n            print(\"fail: calibre invalido\")\n            return\n        self.__barrel.append(lead) \n\n    \n    def __str__(self) -> str:\n        return f\"calibre: {self.__thickness}, bico: [{self.__tip}], tambor: <[{self.__barrel}]>\"\n    \ndef main():\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        args= line.split(\" \")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(args[2], float(args[1]), int(args[3]))\n            pencil.insert(lead)\n\n        elif args[0]==\"init\":\n            pencil.set_thickness(float(args[1]))\nmain()",
+            "lines": "73"
         }
     ]
 }

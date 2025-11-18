@@ -9,7 +9,14 @@ class Lead:
     def usagePerSheet(self):
         if self.__hardness == "HB":
             return 1
-        elif self.__hardness
+        elif self.__hardness=="2B":
+            return 2
+        elif self.__hardness=="4B":
+            return 4
+        elif self.__hardness=="6B":
+            return 6
+        else:
+            return 0
 
     def getHardness(self):
         return self.__hardness
@@ -28,30 +35,39 @@ class Lead:
     
 class Pencil:
     def __init__(self):
-        self.__thickness: int 
-        self.__tip: Lead | None
-        # self.__barrel: 
-    
-    def insert(self, Lead: Lead):
-        self.__thickness: 
+        self.__thickness= None
+        self.__tip= Lead | None
+        self.__barrel: list[Lead] = []
+
+    def set_thickness(self, thickness: float):
+        self.__thickness = thickness
+
+    def insert(self, lead: Lead):
+        if lead.getThickness()!=self.__thickness:
+            print("fail: calibre invalido")
+            return
+        self.__barrel.append(lead) 
 
     
     def __str__(self) -> str:
-        return f"calibre: {self.__thickness}, bico: [{self.__hardness}], tambor: <[{self.__barrel}]>"
+        return f"calibre: {self.__thickness}, bico: [{self.__tip}], tambor: <{self.__barrel}>"
     
-def main(self):
+def main():
     pencil = Pencil()
  
     while True:
         line = input()
         print("$"+line)
+        args= line.split(" ")
         if args[0]=="end":
             break
         elif args[0]=="show":
             print(pencil)
         
         elif args[0]=="insert":
-            lead=Lead(float(args[1]), args[2], int(args[3]))
+            lead=Lead(args[2], float(args[1]), int(args[3]))
             pencil.insert(lead)
-        
+
+        elif args[0]=="init":
+            pencil.set_thickness(float(args[1]))
 main()
