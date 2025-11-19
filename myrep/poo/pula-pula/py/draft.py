@@ -1,7 +1,7 @@
 class Kid:
-    def __init__(self):
-        self.__age: int
-        self.__name:str    
+    def __init__(self, name:str, age:int):
+        self.__age = age
+        self.__name = name    
 
     def get_age(self):
         return self.__age
@@ -16,7 +16,7 @@ class Kid:
         self.__name=name
 
     def __str__(self):
-          return f""
+          return f"{self.__name}:{self.__age}"
 
 
 
@@ -24,29 +24,46 @@ class Kid:
 
 class Trampoline:
     def __init__(self):
-        self.playing: list[Kid]
-        self.waiting: list[Kid]
+        self.playing:list[Kid|None]=[]
+        self.__waiting:list[Kid|None]=[]
 
-    def arrive(self, kid:Kid):
+    def arrive(self, name:str, age:int):
+        self.__waiting.insert(0, Kid(name, age))
 
     def enter(self):
+        if not self.__waiting:
+            print(f"fila vazia")
+        self.__playing.insert(0, self.__waiting[len(self.__waiting)-1])
+        self.__waiting.pop(len(self.__waiting)-1)
 
 
     def leave(self):
 
     def removeKid(name: str) -> Kid|None:
 
+    def __str__(self, ):
 
 def main():
     trampoline=Trampoline()
     while True:
         line=input()
         print("$"+line)
-        args=line.split("")
+        args=line.split(" ")
 
         if args[0]=="end":
             break
         elif args[0]=="show":
             print(trampoline)
         elif args[0]=="enter":
-            
+
+        elif args[0]=="arrieve":
+            trampoline.arrive(args[1], args[2])
+
+        elif args[0]=="leave":
+            trampoline.leave()
+        
+        elif args[0]=="remove":
+            trampoline.removeKid(args[1])
+
+        else:
+            print("fail: comando invalido")

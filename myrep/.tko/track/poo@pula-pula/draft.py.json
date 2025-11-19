@@ -22,8 +22,68 @@
         },
         {
             "label": "2025-11-18_22-52-15",
-            "content": "class Kid:\n    def __init__(self):\n        self.__age: int\n        self.__name:str    \n\n    def get_age(self):\n        return self.__age\n    \n    def get_name(self):\n        return self.__name\n    \n    def set_age(self, age:int):\n        self.__age=age\n\n    def set_name(self, name:str):\n        self.__name=name\n\n    def __str__(self):\n          return f\"\"\n\n\n\n\n\nclass Trampoline:\n    def __init__(self):\n        self.playing: list[Kid]\n        self.waiting: list[Kid]\n\n    def arrive(self, kid:Kid):\n\n    def enter(self):\n\n\n    def leave(self):\n\n    def removeKid(name: str) -> Kid|None:\n\n\ndef main():\n    trampoline=Trampoline()\n    while True:\n        line=input()\n        print(\"$\"+line)\n        args=line.split(\"\")\n\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(trampoline)\n        elif args[0]==\"enter\":\n",
+            "content": "@@ -854,17 +854,4 @@\n r%22:%0A\n-            %0A\n",
             "lines": "51"
+        },
+        {
+            "label": "2025-11-19_00-40-52",
+            "content": "@@ -854,122 +854,17 @@\n r%22:%0A\n-%0A        elif args%5B0%5D==%22arrieve%22:%0A            trampoline.arrive(args%5B1%5D, args%5B2%5D)%0A        else:%0A            print(%22%22)\n+            \n %0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-19_00-46-07",
+            "content": "@@ -1,36 +1,30 @@\n-class Kid:%0A    def __init__(\n+@@ -29,27 +29,8 @@%0A \n self\n+%0A-\n , ag\n@@ -42,948 +42,120 @@\n :str\n-):%0A        self.__age: age%0A        self.__name:name    %0A%0A    def get_age(self):%0A        return self.__age%0A    %0A    def get_name(self):%0A        return self.__name%0A    %0A    def set_age(self, age:\n+%0A ):%250A %0A@@ -48,19 +48,19 @@%0A .__age: %0A-age%0A+\n int\n-):\n %0A \n+%250A\n        \n-self.__age=age%0A%0A    def set_name(self, name:str):%0A        self.__name=name%0A%0A    def __str__(self):%0A          return f%22%22%0A%0A%0A%0A%0A%0Aclass Trampoline:%0A    def __init__(self):%0A        self.playing: list%5BKid%5D%0A        self.waiting: list%5BKid%5D%0A%0A    def arrive(self, kid:Kid):%0A%0A    def enter(self):%0A%0A%0A    def leave(self):%0A%0A    def removeKid(name: str) -%3E Kid%7CNone:%0A%0A%0Adef main():%0A    trampoline=Trampoline()%0A    while True:%0A        line=input()%0A        print(%22$%22+line)%0A        args=line.split(%22%22)%0A%0A        if args%5B0%5D==%22end%22:%0A            break%0A        elif args%5B0%5D==%22show%22:%0A            print(trampoline)%0A        elif args%5B0%5D==%22enter%22:%0A%0A        elif args%5B0%5D==%22arrieve%22:%0A            trampoline.arrive(args%5B1%5D, args%5B2%5D)%0A        else:%0A            print(%22%22)\n+%0A@@ -72,20 +72,19 @@%0A .__name:%0A-name%0A+str%0A     %250A%250A  \n %0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-19_00-50-02",
+            "content": "@@ -65,17 +65,17 @@\n lf.__age\n-=\n+:\n  age%0A   \n@@ -86,25 +86,25 @@\n  self.__name\n-=\n+:\n name    %0A%0A  \n@@ -989,29 +989,7 @@\n nt(%22\n-fail: comando invalido\n %22)%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-19_00-51-31",
+            "content": "@@ -65,17 +65,16 @@\n lf.__age\n- \n = age%0A  \n@@ -94,11 +94,9 @@\n name\n- = \n+=\n name\n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-19_00-52-11",
+            "content": "@@ -610,33 +610,8 @@\n e:%0A%0A\n-    def __str__(self, ):%0A\n %0Adef\n@@ -959,41 +959,8 @@\n 2%5D)%0A\n-%0A        elif args%5B0%5D==%22leave%22:%0A%0A\n     \n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-19_01-18-40",
+            "content": "@@ -31,25 +31,25 @@\n lf, \n-name:str, age:int\n+age:int, name:str\n ):%0A \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-19_01-28-42",
+            "content": "@@ -376,34 +376,8 @@\n n f%22\n-%7Bself.__name%7D:%7Bself.__age%7D\n %22%0A%0A%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-19_01-29-25",
+            "content": "@@ -467,17 +467,18 @@\n .playing\n-=\n+: \n list%5BKid\n@@ -478,19 +478,16 @@\n ist%5BKid%5D\n-=%5B%5D\n %0A       \n@@ -503,21 +503,19 @@\n ting\n-=\n+: \n list%5B\n-k\n+K\n id%5D\n-=%5B%5D\n %0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-19_01-35-58",
+            "content": "@@ -788,17 +788,16 @@\n .split(%22\n- \n %22)%0A%0A    \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-19_02-46-23",
+            "content": "@@ -1,558 +1,242 @@\n-class Kid:%0A    def __init__(self, name:str, age:int):%0A        self.__age = age%0A        self.__name = name    %0A%0A    def get_age(self):%0A        return self.__age%0A    %0A    def get_name(self):%0A        return self.__name%0A    %0A    def set_age(self, age:int):%0A        self.__age=age%0A%0A    def set_name(self, name:str):%0A        self.__name=name%0A%0A    def __str__(self):%0A          return f%22%7Bself.__name%7D:%7Bself.__age%7D%22%0A%0A%0A%0A%0A%0Aclass Trampoline:%0A    def __init__(self):%0A        self.playing:\n+@@ -467,25 +467,25 @@%0A .playing%0A-:%0A+=%0A list%255BKid%0A %257CNone%255D=%255B%0A@@ -472,29 +472,24 @@%0A ing=\n list\n-%5BKid%7CNone%5D=%5B%5D%0A        self.waiting:list%5BKid%7CNone%5D=%5B%5D%0A%0A    def arrive(se\n+%255BKid%0A-%257CNone%0A %255D=%255B%255D%250A       %0A@@ -505,22 +505,17 @@%0A ting%0A-:%0A+=%0A list%255B%0A-K%0A+k%0A id%0A-%257CNone%0A %255D=%255B%255D%0A@@ -541,94 +541,17 @@%0A \n lf, \n+%0A-\n name\n@@ -250,17 +250,19 @@\n ge:int):\n-%0A\n+%250A\n         \n@@ -281,17 +281,19 @@\n me, age)\n-%0A\n+%250A\n         \n@@ -326,559 +326,25 @@\n id)%0A\n-%0A    def enter(self):%0A%0A%0A    def leave(self):%0A%0A    def removeKid(name: str) -%3E Kid%7CNone:%0A%0A    def __str__(self, ):%0A%0Adef main():%0A    trampoline=Trampoline()%0A    while True:%0A        line=input()%0A        print(%22$%22+line)%0A        args=line.split(%22 %22)%0A%0A        if args%5B0%5D==%22end%22:%0A            break%0A        elif args%5B0%5D==%22show%22:%0A            print(trampoline)%0A        elif args%5B0%5D==%22enter%22:%0A%0A        elif args%5B0%5D==%22arrieve%22:%0A            trampoline.arrive(args%5B1%5D, args%5B2%5D)%0A%0A        elif args%5B0%5D==%22leave%22:%0A%0A        else:%0A            print(%22fail: comando invalido%22)\n++kid:Kid):%0A %250A%250A  \n %0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-19_04-00-47",
+            "content": "@@ -495,26 +495,24 @@\n        self.\n-__\n waiting:list\n@@ -579,256 +579,88 @@\n     \n-self.__waiting.insert(0, Kid(name, age))%0A%0A    def enter(self):%0A        if not self.__waiting:%0A            print(f%22fila vazia%22)%0A        self.__playing.insert(0, self.__waiting%5Blen(self.__waiting)-1%5D)%0A        self.__waiting.pop(len(self.__waiting)-1)\n+kid = Kid(name, age)%0A        self.__waiting.insert(0, kid)%0A%0A    def enter(self):\n %0A%0A%0A \n@@ -1133,122 +1133,8 @@\n ve%22:\n-%0A            trampoline.leave()%0A        %0A        elif args%5B0%5D==%22remove%22:%0A            trampoline.removeKid(args%5B1%5D)\n %0A%0A  \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-19_04-11-14",
+            "content": "class Kid:\n    def __init__(self, name:str, age:int):\n        self.__age = age\n        self.__name = name    \n\n    def get_age(self):\n        return self.__age\n    \n    def get_name(self):\n        return self.__name\n    \n    def set_age(self, age:int):\n        self.__age=age\n\n    def set_name(self, name:str):\n        self.__name=name\n\n    def __str__(self):\n          return f\"{self.__name}:{self.__age}\"\n\n\n\n\n\nclass Trampoline:\n    def __init__(self):\n        self.playing:list[Kid|None]=[]\n        self.__waiting:list[Kid|None]=[]\n\n    def arrive(self, name:str, age:int):\n        self.__waiting.insert(0, Kid(name, age))\n\n    def enter(self):\n        if not self.__waiting:\n            print(f\"fila vazia\")\n        self.__playing.insert(0, self.__waiting[len(self.__waiting)-1])\n        self.__waiting.pop(len(self.__waiting)-1)\n\n\n    def leave(self):\n\n    def removeKid(name: str) -> Kid|None:\n\n    def __str__(self, ):\n\ndef main():\n    trampoline=Trampoline()\n    while True:\n        line=input()\n        print(\"$\"+line)\n        args=line.split(\" \")\n\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(trampoline)\n        elif args[0]==\"enter\":\n\n        elif args[0]==\"arrieve\":\n            trampoline.arrive(args[1], args[2])\n\n        elif args[0]==\"leave\":\n            trampoline.leave()\n        \n        elif args[0]==\"remove\":\n            trampoline.removeKid(args[1])\n\n        else:\n            print(\"fail: comando invalido\")\n",
+            "lines": "69"
         }
     ]
 }
