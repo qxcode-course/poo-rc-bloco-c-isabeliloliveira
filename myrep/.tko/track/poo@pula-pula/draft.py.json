@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-18_22-20-46",
+            "content": "@@ -1,279 +0,0 @@\n-class Kid:%0A    def __init__(self):%0A        self.__age: int%0A        self.__name:str%0A        %0A%0A%0A%0A%0A%0Aclass Trampoline:%0A    def __init__(self):%0A        self.playing: List%3CKid%3E%0A        self.waiting: List%3CKid%3E%0A%0A    def arrive(self, kid:Kid):%0A%0A    def enter(self):%0A%0A%0A    def leave(self):\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-18_22-38-51",
+            "content": "@@ -75,16 +75,17 @@\n name:str\n+%0A\n         \n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-18_22-39-11",
+            "content": "@@ -83,279 +83,12 @@\n     \n-%0A%0A\n     \n-def get_age(self):%0A        return self.__age%0A    %0A    def get_name(self):%0A        return self.__name%0A    %0A    def set_age(self, age:int):%0A        self.__age=age%0A%0A    def set_name(self, name:str):%0A        self.__name=name%0A%0A    def __str__(self):%0A          return f%22%22\n %0A%0A%0A%0A\n@@ -149,25 +149,25 @@\n lf.playing: \n-l\n+L\n ist%3CKid%3E%0A   \n@@ -185,17 +185,17 @@\n aiting: \n-l\n+L\n ist%3CKid%3E\n@@ -275,48 +275,4 @@\n lf):\n-%0A%0A    def removeKid(name: str) -%3E Kid%7CNone:%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-11-18_22-47-25",
+            "content": "@@ -424,21 +424,21 @@\n ng: list\n-%5BKid%5D\n+%3CKid%3E\n %0A       \n@@ -460,13 +460,13 @@\n list\n-%5BKid%5D\n+%3CKid%3E\n %0A%0A  \n@@ -536,24 +536,24 @@\n ave(self):%0A%0A\n+\n     def remo\n@@ -586,272 +586,4 @@\n ne:%0A\n-%0A%0Adef main():%0A    trampoline=Trampoline()%0A    while True:%0A        line=input()%0A        print(%22$%22+line)%0A        args=line.split(%22%22)%0A%0A        if args%5B0%5D==%22end%22:%0A            break%0A        elif args%5B0%5D==%22show%22:%0A            print(trampoline)%0A        elif args%5B0%5D==%22enter%22:%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-11-18_22-52-15",
+            "content": "class Kid:\n    def __init__(self):\n        self.__age: int\n        self.__name:str    \n\n    def get_age(self):\n        return self.__age\n    \n    def get_name(self):\n        return self.__name\n    \n    def set_age(self, age:int):\n        self.__age=age\n\n    def set_name(self, name:str):\n        self.__name=name\n\n    def __str__(self):\n          return f\"\"\n\n\n\n\n\nclass Trampoline:\n    def __init__(self):\n        self.playing: list[Kid]\n        self.waiting: list[Kid]\n\n    def arrive(self, kid:Kid):\n\n    def enter(self):\n\n\n    def leave(self):\n\n    def removeKid(name: str) -> Kid|None:\n\n\ndef main():\n    trampoline=Trampoline()\n    while True:\n        line=input()\n        print(\"$\"+line)\n        args=line.split(\"\")\n\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(trampoline)\n        elif args[0]==\"enter\":\n",
+            "lines": "51"
+        }
+    ]
+}
