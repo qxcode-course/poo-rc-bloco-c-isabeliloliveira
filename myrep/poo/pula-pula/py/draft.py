@@ -24,7 +24,7 @@ class Kid:
 
 class Trampoline:
     def __init__(self):
-        self.playing:list[Kid|None]=[]
+        self.__playing:list[Kid|None]=[]
         self.__waiting:list[Kid|None]=[]
 
     def arrive(self, name:str, age:int):
@@ -39,9 +39,14 @@ class Trampoline:
 
     def leave(self):
 
-    def removeKid(name: str) -> Kid|None:
+    def removeKid(self, name: str) -> Kid|None:
 
-    def __str__(self, ):
+    def __str__(self):
+        ps=", ".join(str(k) for k in self.__playing)
+        ws=", ".join(str(k) for k in self.__waiting))
+        return f"[{ws}]=>[{ps}]"
+
+
 
 def main():
     trampoline=Trampoline()
@@ -55,9 +60,9 @@ def main():
         elif args[0]=="show":
             print(trampoline)
         elif args[0]=="enter":
-
+            return
         elif args[0]=="arrieve":
-            trampoline.arrive(args[1], args[2])
+            trampoline.arrive(args[1], int(args[2]))
 
         elif args[0]=="leave":
             trampoline.leave()
@@ -67,3 +72,5 @@ def main():
 
         else:
             print("fail: comando invalido")
+
+main()
