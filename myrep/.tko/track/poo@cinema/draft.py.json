@@ -132,8 +132,158 @@
         },
         {
             "label": "2025-11-20_02-58-25",
-            "content": "class Client:\n    def __init__(self, id:str, phone:int):\n        self.__id=id\n        self.__phone=phone\n        \n    def getPhone(self):\n        return self.__phone\n    \n    def setPhone(self, phone:int):\n        self.__phone=phone\n\n    def getId(self):\n        return self.__id\n    \n    def setId(self, id:str):\n        self.__id=id\n\n    def __str__(self):\n        return f\"{self.__id}:{self.__phone}\"\n\n\nclass Theater:\n    def __init__(self, capacity:int):\n        self.__seats = [None]*capacity\n        self.__search=[None]*capacity\n        self.__verifyIndex=capacity\n    \n    def reserv(self, id:str, phone:int, index:int):\n        if index<0 or index>=self.__verifyIndex:\n            print(\"fail: cadeira nao existe\")\n            return False\n        elif self.__seats[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return False\n        elif id in self.__search:\n            print(\"fail: cliente ja esta no cinema\")\n            return False\n        \n        client=Client(id, phone)\n        self.__seats[index] = client\n        self.__search[index] = id\n        return True\n    \n    def cancel(self, id:str):\n        if id not in self.__search:\n            print(\"fail: cliente nao esta no cinema\")\n            return\n        self.search.remove(id)\n        \n    \n    def __str__(self):\n        return \"[\" + \" \".join(\"-\" if c is None else str(c) for c in self.__seats) + \"]\"\n        \n\ndef main():\n    theater=Theater(0)\n\n    while True:\n        line=input()\n        args=line.split(\" \")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(theater)\n        elif args[0]==\"init\":\n            theater=Theater(int(args[1]))\n        elif args[0]==\"reserve\":\n            theater.reserv(args[1], int(args[2]), int(args[3]))\n        elif args[0]==\"cancel\":\n            theater.cancel(args[1])\n\n        else:\n            print(\"fail: comando invalido\")\n",
+            "content": "@@ -1262,26 +1262,24 @@\n        self.\n-__\n search.remov\n",
             "lines": "73"
+        },
+        {
+            "label": "2025-11-20_03-01-23",
+            "content": "@@ -1080,31 +1080,20 @@\n arch\n-.append(client.getID())\n+%5Bindex%5D = id\n %0A   \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-20_03-05-42",
+            "content": "@@ -1095,17 +1095,17 @@\n ent.getI\n-d\n+D\n ())%0A    \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-20_03-07-11",
+            "content": "@@ -1301,129 +1301,8 @@\n id)%0A\n-        for i, client in enumerate(self.__seats):%0A            if client.getId()=id:%0A                self.__seats%5Bi%5D=None%0A\n     \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-20_03-10-15",
+            "content": "@@ -1377,17 +1377,16 @@\n getId()=\n-=\n id:%0A    \n@@ -1414,25 +1414,24 @@\n ats%5Bi%5D=None%0A\n-%0A\n         %0A   \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-20_03-10-36",
+            "content": "@@ -1423,30 +1423,8 @@\n one%0A\n-                return\n %0A   \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-20_03-10-53",
+            "content": "@@ -1080,16 +1080,16 @@\n arch\n-%5Bindex%5D=\n+.append(\n clie\n@@ -1098,16 +1098,17 @@\n .getId()\n+)\n %0A       \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-20_03-12-46",
+            "content": "@@ -1267,48 +1267,8 @@\n urn%0A\n-        index = self.__search.index(id)%0A\n     \n@@ -1303,18 +1303,16 @@\n %0A       \n- #\n  for i, \n@@ -1349,26 +1349,24 @@\n ts):%0A       \n- #\n      if clie\n@@ -1389,25 +1389,24 @@\n         \n-#\n         \n  self.__\n@@ -1393,25 +1393,24 @@\n             \n- \n self.__seats\n@@ -1429,10 +1429,8 @@\n     \n- #\n     \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-20_03-15-26",
+            "content": "@@ -1314,77 +1314,8 @@\n     \n- self.__search%5Bindex%5D=None%0A        self.__seats%5Bindex%5D=None%0A        #\n  sel\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-20_03-16-28",
+            "content": "@@ -327,25 +327,16 @@\n .__id=id\n-%0A        \n %0A%0A    de\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_04-01-03",
+            "content": "@@ -328,16 +328,24 @@\n __id=id%0A\n+        \n %0A%0A    de\n@@ -573,26 +573,16 @@\n capacity\n-%0A%0A    def \n %0A    %0A  \n@@ -2206,11 +2206,4 @@\n o%22)%0A\n-%0Amain()\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_04-05-52",
+            "content": "@@ -1281,18 +1281,16 @@\n %0A       \n- #\n  index =\n@@ -1313,34 +1313,32 @@\n ndex(id)%0A       \n- #\n  self.__search%5Bi\n@@ -1359,10 +1359,8 @@\n     \n- #\n  sel\n@@ -1380,32 +1380,34 @@\n ex%5D=None%0A       \n+ #\n  self.__search.r\n@@ -1423,16 +1423,18 @@\n %0A       \n+ #\n  for i, \n@@ -1471,24 +1471,26 @@\n ts):%0A       \n+ #\n      if clie\n@@ -1504,32 +1504,34 @@\n d()==id:%0A       \n+ #\n          self.__\n@@ -1547,24 +1547,26 @@\n None%0A       \n+ #\n          ret\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-20_04-06-23",
+            "content": "@@ -1282,24 +1282,17 @@\n         \n-%0A       \n+#\n  index =\n@@ -1315,32 +1315,34 @@\n ndex(id)%0A       \n+ #\n  self.__search%5Bi\n@@ -1351,32 +1351,34 @@\n ex%5D=None%0A       \n+ #\n  self.__seats%5Bin\n@@ -1386,34 +1386,32 @@\n ex%5D=None%0A       \n- #\n  self.__search.r\n@@ -1427,18 +1427,16 @@\n %0A       \n- #\n  for i, \n@@ -1478,22 +1478,20 @@\n         \n-#\n     \n- \n if clien\n@@ -1504,34 +1504,32 @@\n d()==id:%0A       \n- #\n          self.__\n@@ -1549,18 +1549,16 @@\n %0A       \n- #\n         \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-20_04-06-53",
+            "content": "@@ -1398,25 +1398,27 @@\n     \n-%0A\n     \n-def \n+# self.\n __search\n (sel\n@@ -1417,32 +1417,27 @@\n arch\n-(self, id: str):\n+.remove(id)\n %0A       \n %0A   \n@@ -1432,24 +1432,18 @@\n %0A       \n-%0A       \n+ #\n  for i, \n@@ -1485,20 +1485,22 @@\n         \n+#\n     \n+ \n if clien\n@@ -1513,32 +1513,34 @@\n d()==id:%0A       \n+ #\n          self.__\n@@ -1556,24 +1556,26 @@\n None%0A       \n+ #\n          ret\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-20_04-08-51",
+            "content": "@@ -1505,31 +1505,8 @@\n  if \n-client is not None and \n clie\n@@ -1584,32 +1584,8 @@\n turn\n- 1%0A            return -1\n %0A   \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-20_04-09-40",
+            "content": "@@ -561,24 +561,34 @@\n dex=capacity\n+%0A%0A    def \n %0A    %0A    de\n@@ -1632,127 +1632,8 @@\n  -1%0A\n-        %0A    def __verifyIndex(self, index:int):%0A        if index %3E=0 and index%3Clen(self.__seats):%0A            return%0A%0A\n     \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-20_04-12-43",
+            "content": "@@ -739,33 +739,24 @@\n eturn False%0A\n-        %0A\n         elif\n@@ -861,33 +861,24 @@\n eturn False%0A\n-        %0A\n         elif\n@@ -1280,18 +1280,16 @@\n %0A       \n- #\n  index =\n@@ -1312,34 +1312,32 @@\n ndex(id)%0A       \n- #\n  self.__search%5Bi\n@@ -1358,10 +1358,8 @@\n     \n- #\n  sel\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-20_04-25-11",
+            "content": "@@ -1408,26 +1408,24 @@\n one%0A    %0A   \n- #\n  def __searc\n@@ -1449,26 +1449,24 @@\n %0A       %0A   \n- #\n      for i, \n@@ -1504,25 +1504,24 @@\n s):%0A    \n-#\n         \n  if clie\n@@ -1512,17 +1512,16 @@\n         \n- \n if clien\n@@ -1557,26 +1557,24 @@\n d()==id:%0A   \n- #\n             \n@@ -1595,25 +1595,24 @@\n i%5D=None%0A    \n-#\n             \n@@ -1607,25 +1607,24 @@\n             \n- \n return 1%0A   \n@@ -1619,26 +1619,24 @@\n return 1%0A   \n- #\n          ret\n@@ -1654,18 +1654,16 @@\n     %0A   \n- #\n  def __v\n@@ -1690,26 +1690,24 @@\n ex:int):%0A   \n- #\n      if inde\n@@ -1744,18 +1744,16 @@\n ts):%0A   \n- #\n         \n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-11-20_04-25-36",
+            "content": "@@ -1286,192 +1286,8 @@\n urn%0A\n-        self.__search.remove(id)%0A        for i, cliente in enumerate(self.__seats):%0A            if cliente.getId()== id:%0A                self.__seats%5Bi%5D = None%0A                return %0A\n     \n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-11-20_04-27-29",
+            "content": "@@ -1465,16 +1465,514 @@\n  return \n+%0A        %0A        # index = self.__search.index(id)%0A        # self.__search%5Bindex%5D=None%0A        # self.__seats%5Bindex%5D=None%0A    %0A    # def __search(self, id: str):%0A       %0A    #     for i, client in enumerate(self.__seats):%0A    #         if client is not None and client.getId()==id:%0A    #             self.__seats%5Bi%5D=None%0A    #             return 1%0A    #         return -1%0A        %0A    # def __verifyIndex(self, index:int):%0A    #     if index %3E=0 and index%3Clen(self.__seats):%0A    #         return%0A%0A\n         \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-20_04-29-01",
+            "content": "@@ -1293,16 +1293,8 @@\n     \n- index =\n  sel\n@@ -1308,88 +1308,18 @@\n rch.\n-index(id)%0A        self.__search%5Bindex%5D = None%0A        self.__seats%5Bindex%5D = None\n+remove(id)\n %0A   \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_04-36-39",
+            "content": "@@ -1389,25 +1389,24 @@\n dex%5D = None%0A\n-%0A\n         for \n@@ -1463,31 +1463,8 @@\n  if \n-clienteis not None and \n clie\n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-11-20_04-37-48",
+            "content": "@@ -1401,18 +1401,16 @@\n %0A       \n- #\n  for i, \n@@ -1448,26 +1448,24 @@\n ts):%0A       \n- #\n      if clie\n@@ -1504,34 +1504,32 @@\n ()== id:%0A       \n- #\n          self.__\n@@ -1555,10 +1555,8 @@\n     \n- #\n     \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-20_04-39-10",
+            "content": "@@ -1401,16 +1401,18 @@\n %0A       \n+ #\n  for i, \n@@ -1450,24 +1450,26 @@\n ts):%0A       \n+ #\n      if clie\n@@ -1508,32 +1508,34 @@\n ()== id:%0A       \n+ #\n          self.__\n@@ -1553,24 +1553,26 @@\n None%0A       \n+ #\n          ret\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-20_04-39-17",
+            "content": "@@ -1393,38 +1393,24 @@\n  = None%0A\n-        return\n %0A       \n  # for i\n@@ -1401,18 +1401,16 @@\n %0A       \n- #\n  for i, \n@@ -1453,22 +1453,20 @@\n         \n-#\n     \n- \n if clien\n@@ -1504,34 +1504,32 @@\n ()== id:%0A       \n- #\n          self.__\n@@ -1555,10 +1555,8 @@\n     \n- #\n     \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-20_04-39-45",
+            "content": "@@ -1408,21 +1408,16 @@\n  return%0A\n-    %0A\n         \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-20_04-41-21",
+            "content": "@@ -760,16 +760,18 @@\n         \n+el\n if self.\n@@ -887,24 +887,26 @@\n    %0A        \n+el\n if id in sel\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-20_04-41-59",
+            "content": "@@ -1099,18 +1099,30 @@\n %5Bindex%5D=\n-id\n+client.getId()\n %0A       \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-20_04-42-34",
+            "content": "@@ -1401,24 +1401,205 @@\n    %0A        \n+# for i, cliente in enumerate(self.__seats):%0A        #     if clienteis not None and cliente.getId()== id:%0A        #         self.__seats%5Bi%5D = None%0A        #         return         \n %0A    %0A    de\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-20_04-44-59",
+            "content": "@@ -1638,34 +1638,8 @@\n  %22)%0A\n-        print(f%22$%7Bline%7D%22)%0A\n     \n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-20_04-45-28",
+            "content": "class Client:\n    def __init__(self, id:str, phone:int):\n        self.__id=id\n        self.__phone=phone\n        \n    def getPhone(self):\n        return self.__phone\n    \n    def setPhone(self, phone:int):\n        self.__phone=phone\n\n    def getId(self):\n        return self.__id\n    \n    def setId(self, id:str):\n        self.__id=id\n\n\n    def __str__(self):\n        return f\"{self.__id}:{self.__phone}\"\n\n\nclass Theater:\n    def __init__(self, capacity:int):\n        self.__seats = [None]*capacity\n        self.__search=[None]*capacity\n        self.__verifyIndex=capacity\n    \n    def reserv(self, id:str, phone:int, index:int):\n        if index<0 or index>=self.__verifyIndex:\n            print(\"fail: cadeira nao existe\")\n            return False\n        \n        if self.__seats[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return False\n        \n        if id in self.__search:\n            print(\"fail: cliente ja esta no cinema\")\n            return False\n        \n        client=Client(id, phone)\n        self.__seats[index] = client\n        self.__search[index]=id\n        return True\n    \n    def cancel(self, id:str):\n        if id not in self.__search:\n            print(\"fail: cliente nao esta no cinema\")\n            return\n        index = self.__search.index(id)\n        self.__search[index] = None\n        self.__seats[index] = None\n        return\n    \n        \n    \n    def __str__(self):\n        return \"[\" + \" \".join(\"-\" if c is None else str(c) for c in self.__seats) + \"]\"\n        \n\ndef main():\n    theater=Theater(0)\n\n    while True:\n        line=input()\n        args=line.split(\" \")\n        print(f\"${line}\")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(theater)\n        elif args[0]==\"init\":\n            theater=Theater(int(args[1]))\n        elif args[0]==\"reserve\":\n            theater.reserv(args[1], int(args[2]), int(args[3]))\n        elif args[0]==\"cancel\":\n            theater.cancel(args[1])\n\n        else:\n            print(\"fail: comando invalido\")\n\nmain()",
+            "lines": "83"
         }
     ]
 }

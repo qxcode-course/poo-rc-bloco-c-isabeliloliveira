@@ -15,6 +15,7 @@ class Client:
     def setId(self, id:str):
         self.__id=id
 
+
     def __str__(self):
         return f"{self.__id}:{self.__phone}"
 
@@ -29,23 +30,29 @@ class Theater:
         if index<0 or index>=self.__verifyIndex:
             print("fail: cadeira nao existe")
             return False
-        elif self.__seats[index] is not None:
+        
+        if self.__seats[index] is not None:
             print("fail: cadeira ja esta ocupada")
             return False
-        elif id in self.__search:
+        
+        if id in self.__search:
             print("fail: cliente ja esta no cinema")
             return False
         
         client=Client(id, phone)
         self.__seats[index] = client
-        self.__search[index] = id
+        self.__search[index]=id
         return True
     
     def cancel(self, id:str):
         if id not in self.__search:
             print("fail: cliente nao esta no cinema")
             return
-        self.search.remove(id)
+        index = self.__search.index(id)
+        self.__search[index] = None
+        self.__seats[index] = None
+        return
+    
         
     
     def __str__(self):
@@ -58,6 +65,7 @@ def main():
     while True:
         line=input()
         args=line.split(" ")
+        print(f"${line}")
         if args[0]=="end":
             break
         elif args[0]=="show":
@@ -71,3 +79,5 @@ def main():
 
         else:
             print("fail: comando invalido")
+
+main()
