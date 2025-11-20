@@ -59,18 +59,16 @@ class Pencil:
             print("fail: nao existe grafite no bico")
             return
 
-        spent=self.__tip.usagePerSheet()
-
         if self.__tip.getSize() <= 10:
                 self.__tip=None
                 print("fail: tamanho insuficiente")
                 return
 
-        nsize=self.__tip.getSize()-spent
+        nsize=self.__tip.getSize()-self.__tip.usagePerSheet()
 
         if nsize<10:
             print("fail: folha incompleta")
-            self.__tip.__size=10
+            self.__tip.setSize(10)
             return
         self.__tip.setSize(nsize)
 

@@ -33,18 +33,34 @@ class Trampoline:
     def enter(self):
         if not self.__waiting:
             print(f"fila vazia")
-        self.__playing.insert(0, self.__waiting[len(self.__waiting)-1])
-        self.__waiting.pop(len(self.__waiting)-1)
-
+            return
+        
+        
+        kid = self.__waiting.pop()
+        self.__playing.insert(0, kid)
 
     def leave(self):
+        if not self.__playing:
+            return
+        
+        kid = self.__playing.pop()
+        self.__waiting.insert(0, kid)        
 
-    def removeKid(self, name: str) -> Kid|None:
+    def removeKid(self, name: str):
+        for i, kid in enumerate(self.__waiting):
+            if kid.get_name()==name:
+                return self.__waiting.pop(i)
+        
+        for i, kid in enumerate(self.__playing):
+            if kid.get_name()==name:
+                return self.__playing.pop(i)
+            print(f"fail: {name} nao esta no pula-pula")
+            return None
 
     def __str__(self):
         ps=", ".join(str(k) for k in self.__playing)
-        ws=", ".join(str(k) for k in self.__waiting))
-        return f"[{ws}]=>[{ps}]"
+        ws=", ".join(str(k) for k in self.__waiting)
+        return f"[{ws}] => [{ps}]"
 
 
 
@@ -57,11 +73,14 @@ def main():
 
         if args[0]=="end":
             break
+
         elif args[0]=="show":
             print(trampoline)
+
         elif args[0]=="enter":
-            return
-        elif args[0]=="arrieve":
+            trampoline.enter()
+
+        elif args[0]=="arrive":
             trampoline.arrive(args[1], int(args[2]))
 
         elif args[0]=="leave":

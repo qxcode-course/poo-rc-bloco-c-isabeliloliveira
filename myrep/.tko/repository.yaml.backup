@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-isabeliloliveira/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-19 10:41:35'
+  cache_timestamp: '2025-11-20 00:10:33'
   filters:
   - listas
 expanded:
@@ -21,7 +21,8 @@ expanded:
 tasks:
   poo@array: '{rate:100, alone:10, study:180}'
   poo@budega: '{rate:100}'
-  poo@lapiseira: '{rate:85}'
+  poo@lapiseira: '{rate:100}'
+  poo@pula-pula: '{rate:90}'
 flags:
   quests: 1
   tracks: 0
@@ -29,4 +30,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@bloco_c-listas
+selected: poo@cinema

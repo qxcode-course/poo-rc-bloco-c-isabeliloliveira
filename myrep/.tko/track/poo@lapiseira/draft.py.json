@@ -247,8 +247,48 @@
         },
         {
             "label": "2025-11-19_00-28-25",
-            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness==\"2B\":\n            return 2\n        elif self.__hardness==\"4B\":\n            return 4\n        elif self.__hardness==\"6B\":\n            return 6\n        else:\n            return 0\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    def __str__(self) -> str:\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n    \nclass Pencil:\n    def __init__(self, thickness: float=0, lead:Lead|None=None):\n        self.__thickness=thickness\n        self.__tip=lead\n        self.__barrel: list[Lead] = []\n\n    def set_thickness(self, thickness: float):\n        self.__thickness = thickness\n\n    def insert(self, lead: Lead):\n        if lead.getThickness()!=self.__thickness:\n            print(\"fail: calibre incompat\u00edvel\")\n            return\n        self.__barrel.append(lead) \n\n    def remove(self):\n        if self.__tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        self.__tip=None\n\n    def write(self):\n        if self.__tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n\n        spent=self.__tip.usagePerSheet()\n\n        if self.__tip.getSize() <= 10:\n                self.__tip=None\n                print(\"fail: tamanho insuficiente\")\n                return\n\n        nsize=self.__tip.getSize()-spent\n\n        if nsize<10:\n            print(\"fail: folha incompleta\")\n            self.__tip.__size=10\n            return\n        self.__tip.setSize(nsize)\n\n\n    def pull(self):\n        if self.__tip is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return\n        if not self.__barrel:\n            print(\"fail: tambor vazio \")\n            return\n        self.__tip=self.__barrel.pop(0)\n    \n    def __str__(self) -> str:\n        tip= \"[]\" if self.__tip is None else str(self.__tip)\n        barrel= \"\".join(str(x) for x in self.__barrel)\n        barrel=f\"{barrel}\"\n        return f\"calibre: {self.__thickness}, bico: {tip}, tambor: <{barrel}>\"\n    \ndef main():\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        args= line.split(\" \")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(args[2], float(args[1]), int(args[3]))\n            pencil.insert(lead)\n\n\n        elif args[0]==\"remove\":\n            pencil.remove()\n\n        elif args[0]==\"write\":\n            pencil.write()\n\n        elif args[0]==\"pull\":\n            pencil.pull()\n\n        elif args[0]==\"init\":\n            pencil.set_thickness(float(args[1]))\n\n        else:\n            print(\"fail: comando invalido\")\nmain()",
+            "content": "@@ -1009,30 +1009,20 @@\n f.__tip=\n-L\n+l\n ead\n-%7CNone=None\n %0A       \n",
             "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-16-56",
+            "content": "@@ -1013,16 +1013,26 @@\n tip=Lead\n+%7CNone=None\n %0A       \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-17-03",
+            "content": "@@ -1009,17 +1009,17 @@\n f.__tip=\n-l\n+L\n ead%0A    \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-17-09",
+            "content": "@@ -1923,30 +1923,25 @@\n f.__tip.\n-setSize(nsize)\n+__size=10\n %0A       \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-20-46",
+            "content": "@@ -1608,37 +1608,8 @@\n rn%0A%0A\n-        self.__tip.getSize()%0A\n     \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-23-28",
+            "content": "@@ -1612,17 +1612,44 @@\n         \n-#\n+self.__tip.getSize()%0A       \n  spent=s\n@@ -1862,33 +1862,12 @@\n ()-s\n-elf.__tip.usagePerSheet()\n+pent\n %0A%0A  \n",
+            "lines": "125"
+        },
+        {
+            "label": "2025-11-20_00-24-38",
+            "content": "@@ -1954,18 +1954,21 @@\n setSize(\n-10\n+nsize\n )%0A      \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-25-18",
+            "content": "@@ -1596,32 +1596,76 @@\n         return%0A%0A\n+        # spent=self.__tip.usagePerSheet()%0A%0A\n         if self.\n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-20_00-25-33",
+            "content": "#tentando deixar tudo em ingl\u00eas pelo menos uma vez na vida.\n\nclass Lead:\n    def __init__(self, hardness: str, thickness: float, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        elif self.__hardness==\"2B\":\n            return 2\n        elif self.__hardness==\"4B\":\n            return 4\n        elif self.__hardness==\"6B\":\n            return 6\n        else:\n            return 0\n\n    def getHardness(self):\n        return self.__hardness\n    \n    def getThickness(self):\n        return self.__thickness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, size: int):\n        self.__size=size\n\n    def __str__(self) -> str:\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n    \nclass Pencil:\n    def __init__(self, thickness: float=0, lead:Lead|None=None):\n        self.__thickness=thickness\n        self.__tip=lead\n        self.__barrel: list[Lead] = []\n\n    def set_thickness(self, thickness: float):\n        self.__thickness = thickness\n\n    def insert(self, lead: Lead):\n        if lead.getThickness()!=self.__thickness:\n            print(\"fail: calibre incompat\u00edvel\")\n            return\n        self.__barrel.append(lead) \n\n    def remove(self):\n        if self.__tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        self.__tip=None\n\n    def write(self):\n        if self.__tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n\n        if self.__tip.getSize() <= 10:\n                self.__tip=None\n                print(\"fail: tamanho insuficiente\")\n                return\n\n        nsize=self.__tip.getSize()-self.__tip.usagePerSheet()\n\n        if nsize<10:\n            print(\"fail: folha incompleta\")\n            self.__tip.setSize(10)\n            return\n        self.__tip.setSize(nsize)\n\n\n    def pull(self):\n        if self.__tip is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return\n        if not self.__barrel:\n            print(\"fail: tambor vazio \")\n            return\n        self.__tip=self.__barrel.pop(0)\n    \n    def __str__(self) -> str:\n        tip= \"[]\" if self.__tip is None else str(self.__tip)\n        barrel= \"\".join(str(x) for x in self.__barrel)\n        barrel=f\"{barrel}\"\n        return f\"calibre: {self.__thickness}, bico: {tip}, tambor: <{barrel}>\"\n    \ndef main():\n    pencil = Pencil()\n \n    while True:\n        line = input()\n        print(\"$\"+line)\n        args= line.split(\" \")\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(pencil)\n        \n        elif args[0]==\"insert\":\n            lead=Lead(args[2], float(args[1]), int(args[3]))\n            pencil.insert(lead)\n\n\n        elif args[0]==\"remove\":\n            pencil.remove()\n\n        elif args[0]==\"write\":\n            pencil.write()\n\n        elif args[0]==\"pull\":\n            pencil.pull()\n\n        elif args[0]==\"init\":\n            pencil.set_thickness(float(args[1]))\n\n        else:\n            print(\"fail: comando invalido\")\nmain()",
+            "lines": "122"
         }
     ]
 }
